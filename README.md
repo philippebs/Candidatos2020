@@ -13,10 +13,10 @@ source venv/bin/activate
 # Com o ambiente habilitado instalar as dependências.
 pip install requirements.txt 
 
-# Entrar no diretorio do site
+# Entrar no diretório do site
 cd mysite
 
-# Iniciandl o banco de dados sqllite3
+# Iniciando o banco de dados sqllite3
 python manage.py migrate
 
 # Criando o super usuário para usar as funções de admin
