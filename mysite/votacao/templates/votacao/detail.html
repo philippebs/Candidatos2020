@@ -1,0 +1,22 @@
+{% extends "votacao/base_generica.html" %}
+
+{% block content %}
+    <div>
+        <span><h1>{{ municipio }}</h1></span>
+        
+
+        <form action="{% url 'votacao:buscar' municipio.id %}" method="post">
+            {% csrf_token %}
+            <select name="ano">
+                <option value="2020">2020</option>
+            </select>
+            <label>Buscar votacao ano</label>
+            <input id="btn_buscar_votacao" type="submit" value="buscar" />
+        </form>
+
+        <ol>
+            <li><a href="/votacao/{{ municipio.id }}/candidato/">Candidatos</a></li>
+            <li><a href="/votacao/{{ municipio.id }}/zona_secao/">Zonas e Seções</a></li>
+        </ol>
+    </div>
+{% endblock %}

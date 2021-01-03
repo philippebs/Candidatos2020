@@ -1,0 +1,25 @@
+{% extends "votacao/base_generica.html" %}
+
+{% block content %}
+  
+    {% if municipio_list %}
+        <table class="table table-striped table-hover">
+            <caption>Lista de Município</caption>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Número</th>
+                </tr>
+            </thead>
+            {% for municipio in municipio_list %}
+                <tr>
+                    <td><a href="/votacao/{{ municipio.id }}/">{{ municipio.nome }}</a></td>
+                    <td>{{ municipio.numero }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Sem municipios cadastrados</p>
+    {% endif %}
+
+{% endblock %}

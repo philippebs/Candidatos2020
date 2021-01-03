@@ -1,0 +1,33 @@
+{% extends "votacao/base_generica.html" %}
+
+{% block content %}
+
+    <h1>{{ candidato }}</h1>
+    <h3>Total: {{ total }}</h3>
+    {% if votos %}
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Turno</th>
+                    <th>Zona</th>
+                    <th>Secao</th>
+                    <th>Votos</th>    
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for voto in votos %}
+                    <tr>
+                        <td>{{ voto.turno }}</td>
+                        <td>{{ voto.municipio_zona.zona }}</td>
+                        <td>{{ voto.municipio_zona.secao }}</td>
+                        <td>{{ voto.quantidade }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Sem votos para o candidato</p>
+    {% endif %}
+
+{% endblock %}

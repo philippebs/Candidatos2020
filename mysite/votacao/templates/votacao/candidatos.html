@@ -1,0 +1,31 @@
+{% extends "votacao/base_generica.html" %}
+
+{% block content %}
+
+    <h1>{{ municipio }}</h1>
+    {% if candidato_partido_list %}
+        <table class="table table-striped table-hover">
+            <caption>Lista de Município</caption>
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Partido</th>
+                    <th>Candidato</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            
+            {% for candidato_partido in candidato_partido_list %}
+                <tr>
+                    <td>{{ candidato_partido.numero }}</td>
+                    <td>{{ candidato_partido.partido.nome }}</td>
+                    <td>{{ candidato_partido.tipo_candidato.nome }}</td>
+                    <td><a href="/votacao/{{ municipio.id }}/candidato/{{ candidato_partido.candidato.id }}/{{ candidato_partido.ano }}/">{{ candidato_partido.candidato.nome }}</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Sem municipios cadastrados</p>
+    {% endif %}
+
+{% endblock %}
