@@ -1,0 +1,7 @@
+asgiref==3.2.10
+Django==3.0.8
+pytz==2020.1
+sqlparse==0.3.1
+selenium>=3.141.0
+webdriver_manager>=3.2.1
+beautifulsoup4==4.9.3
