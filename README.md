@@ -10,5 +10,5 @@ source venv/Scripts/activate
 # Habilitando o ambiente linux
 source venv/bin/activate
 
-# Com o ambiente habilitado instalar as dependencias.
+# Com o ambiente habilitado instalar as dependências.
 pip install requirements.txt 
