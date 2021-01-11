@@ -11,7 +11,7 @@ source venv/Scripts/activate
 source venv/bin/activate
 
 # Com o ambiente habilitado instalar as dependências.
-pip install requirements.txt 
+pip install -r requirements.txt 
 
 # Entrar no diretório do site
 cd mysite
